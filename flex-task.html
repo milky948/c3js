@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<title>HTML Tutorial</title>
+<style>
+@media screen and (max-width:480px)
+{
+    
+  .progessbar
+ { 
+   width:100%;
+   background:red;
+   height:40px;
+   display:flex;
+   align-items: center;
+   align-content: space-between;
+   flex-direction: column;
+}
+.levels{
+  
+width:100%;
+  padding:0px;
+  text-align:center;
+  
+}
+
+}
+@media screen and (min-width:480px)
+{
+    
+  .progessbar
+ { 
+   width:100%;
+   background:skyblue;
+   height:40px;
+   line-height:40px;
+   display:flex;
+   align-items: center;
+   align-content: space-between;
+   flex-direction: row;
+   justify-content:center;
+ 
+}
+.levels{
+  
+width:31%;
+  padding:0px;
+  text-align:center;
+  
+}
+}
+
+.active
+{
+  border:2px solid green;
+}
+
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body>
+
+<div class="progessbar">
+<div class="levels active" id="levelone">one
+</div>
+<div class="levels" id="">two</div>
+<div class="levels" id="">three</div>
+</div>
+<br/>
+<p>&nbsp;</p>
+<button id="reset">Reset</button>
+
+</body>
+<script>
+$('#reset').on('click',function()
+{
+ alert('Hi');
+$('.levels').removeClass('active');
+$('.levels:first').addClass('active');
+});
+
+$('.levels').on('click', function()
+{
+
+$('.levels').removeClass('active');
+$(this).addClass('active');
+
+})
+</script>
+</html>
